@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
@@ -35,7 +35,7 @@ const Skills = () => {
       threshold: 0.1,
     });
 
-    React.useEffect(() => {
+    useEffect(() => {
       if (inView) {
         controls.start({
           opacity: 1,
