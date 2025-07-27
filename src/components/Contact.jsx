@@ -24,7 +24,7 @@ const Contact = () => {
     const body = `Name: ${formData.name}%0AEmail: ${formData.email}%0ASubject: ${formData.subject}%0A%0AMessage:%0A${formData.message}%0A%0ASent from portfolio website on ${new Date().toLocaleString()}`;
     
     // Open user's default email client
-    window.location.href = `mailto:hanumanthuchandrashekar@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = `mailto:hanumanthuchandrashekar972@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     
     // Reset form
     setFormData({
@@ -142,11 +142,11 @@ const Contact = () => {
             <div className="text-4xl mb-4">📧</div>
             <h3 className="text-lg font-semibold text-white mb-2">Email</h3>
             <a 
-              href="mailto:hanumanthuchandrashekar@gmail.com" 
+              href="mailto:hanumanthuchandrashekar972@gmail.com" 
               className="text-slate-300 hover:text-purple-300 transition-colors break-all"
               style={{ wordBreak: 'break-word' }}
             >
-              hanumanthuchandrashekar@gmail.com
+              hanumanthuchandrashekar972@gmail.com
             </a>
           </div>
           <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-slate-700">
