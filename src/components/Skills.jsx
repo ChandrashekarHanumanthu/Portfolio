@@ -4,29 +4,40 @@ import { useInView } from 'react-intersection-observer';
 
 const Skills = () => {
   const skills = [
-    { name: "Java", level: 90, color: "from-amber-500 to-amber-600", icon: "", category: "Backend" },
-    { name: "Spring Boot", level: 85, color: "from-amber-500 to-amber-600", icon: "", category: "Backend" },
-    { name: "React.js", level: 80, color: "from-sky-500 to-sky-600", icon: "", category: "Frontend" },
-    { name: "JavaScript", level: 85, color: "from-sky-500 to-sky-600", icon: "", category: "Frontend" },
-    { name: "HTML/CSS", level: 90, color: "from-sky-500 to-sky-600", icon: "", category: "Frontend" },
-    { name: "JPA/Hibernate", level: 80, color: "from-emerald-500 to-emerald-600", icon: "", category: "Database" },
-    { name: "MySQL", level: 75, color: "from-emerald-500 to-emerald-600", icon: "", category: "Database" },
-    { name: "PostgreSQL", level: 80, color: "from-emerald-500 to-emerald-600", icon: "", category: "Database" },
-    { name: "Python", level: 75, color: "from-indigo-500 to-indigo-600", icon: "", category: "Languages" },
-    { name: "Odoo", level: 85, color: "from-violet-500 to-violet-600", icon: "", category: "ERP" },
-    { name: "XML", level: 75, color: "from-rose-500 to-rose-600", icon: "", category: "Markup" },
-    { name: "REST APIs", level: 90, color: "from-amber-500 to-amber-600", icon: "", category: "Backend" },
-    { name: "Git", level: 85, color: "from-indigo-500 to-indigo-600", icon: "", category: "Tools" },
-    { name: "Custom Dashboards", level: 80, color: "from-sky-500 to-sky-600", icon: "", category: "Frontend" }
-  ];
+  // Backend
+  { name: "Java", level: 90, color: "from-amber-500 to-amber-600", icon: "", category: "Backend" },
+  { name: "Spring Boot", level: 85, color: "from-amber-500 to-amber-600", icon: "", category: "Backend" },
+  { name: "Node.js", level: 80, color: "from-amber-500 to-amber-600", icon: "", category: "Backend" },
+  { name: "REST APIs", level: 90, color: "from-amber-500 to-amber-600", icon: "", category: "Backend" },
 
-  const categories = [
-    { name: "Backend Development", color: "from-amber-500 to-amber-600", icon: "" },
-    { name: "Frontend Development", color: "from-sky-500 to-sky-600", icon: "" },
-    { name: "Database & ORM", color: "from-emerald-500 to-emerald-600", icon: "" },
-    { name: "ERP & Business Solutions", color: "from-violet-500 to-violet-600", icon: "" },
-    { name: "Languages & Tools", color: "from-indigo-500 to-indigo-600", icon: "" }
-  ];
+  // Frontend
+  { name: "React.js", level: 85, color: "from-sky-500 to-sky-600", icon: "", category: "Frontend" },
+  { name: "JavaScript", level: 85, color: "from-sky-500 to-sky-600", icon: "", category: "Frontend" },
+  { name: "HTML/CSS", level: 90, color: "from-sky-500 to-sky-600", icon: "", category: "Frontend" },
+  { name: "Custom Dashboards", level: 80, color: "from-sky-500 to-sky-600", icon: "", category: "Frontend" },
+
+  // Database
+  { name: "MySQL", level: 80, color: "from-emerald-500 to-emerald-600", icon: "", category: "Database" },
+  { name: "PostgreSQL", level: 80, color: "from-emerald-500 to-emerald-600", icon: "", category: "Database" },
+  { name: "JPA/Hibernate", level: 80, color: "from-emerald-500 to-emerald-600", icon: "", category: "Database" },
+
+  // Additional (Internship Experience)
+  { name: "Odoo", level: 85, color: "from-violet-500 to-violet-600", icon: "", category: "Additional Skills" },
+  { name: "XML", level: 75, color: "from-violet-500 to-voilet-600", icon: "", category: "Additional Skills" },
+  { name: "Python", level: 75, color: "from-violet-500 to-voilet-600", icon: "", category: "Additional Skills" },
+
+  // Tools
+  { name: "Git", level: 85, color: "from-indigo-500 to-indigo-600", icon: "", category: "Tools" }
+];
+
+const categories = [
+  { name: "Backend Development", color: "from-amber-500 to-amber-600", icon: "" },
+  { name: "Frontend Development", color: "from-sky-500 to-sky-600", icon: "" },
+  { name: "Database & ORM", color: "from-emerald-500 to-emerald-600", icon: "" },
+  { name: "Additional Skills (Internship)", color: "from-violet-500 to-violet-600", icon: "" },
+  { name: "Languages & Tools", color: "from-indigo-500 to-indigo-600", icon: "" }
+];
+
 
   const SkillCard = ({ skill, index }) => {
     const controls = useAnimation();
@@ -104,15 +115,15 @@ const Skills = () => {
   const SkillCategory = ({ category }) => {
     const skillsInCategory = skills.filter(skill => {
       if (category.name === "Backend Development") {
-        return ["Java", "Spring Boot", "JPA/Hibernate", "REST APIs"].includes(skill.name);
+        return ["Java", "Spring Boot", "Node.js", "REST APIs"].includes(skill.name);
       } else if (category.name === "Frontend Development") {
-        return ["React.js", "JavaScript", "HTML/CSS"].includes(skill.name);
+        return ["React.js", "JavaScript", "HTML/CSS", "Custom Dashboards"].includes(skill.name);
       } else if (category.name === "Database & ORM") {
-        return ["MySQL", "PostgreSQL"].includes(skill.name);
-      } else if (category.name === "ERP & Business Solutions") {
-        return ["Odoo", "XML", "Custom Dashboards"].includes(skill.name);
+        return ["MySQL", "PostgreSQL", "JPA/Hibernate"].includes(skill.name);
+      } else if (category.name === "Additional Skills (Internship)") {
+        return ["Odoo", "XML", "Python"].includes(skill.name);
       } else if (category.name === "Languages & Tools") {
-        return ["Python", "Git"].includes(skill.name);
+        return ["Git"].includes(skill.name);
       }
       return false;
     });

@@ -61,33 +61,33 @@ const About = () => {
 
   const workExperience = [
     {
-      title: "Full Stack Developer",
+      title: "Web Developer",
       company: "Kapil Technologies",
       period: "Jul 2025 – Present",
       location: "Hyderabad, Telangana, India",
       type: "Full-time",
       icon: "💼",
       achievements: [
-        "Continuing work on Odoo software development with technology stack including PostgreSQL, XML, Python and JavaScript",
-        "Developing and maintaining CRM and Project modules with custom business logic and workflow automation",
-        "Creating customized dashboards and reports to meet specific client requirements and business needs",
-        "Implementing UI/UX improvements and performance optimizations for better user experience",
-        "Collaborating with cross-functional teams to deliver end-to-end solutions using Odoo framework"
+        "Developing and maintaining the company portal using React.js, Java, Spring Boot, and MySQL",
+        "Implementing responsive and user-friendly interfaces with modern UI/UX practices",
+        "Integrating RESTful APIs for seamless data exchange between frontend and backend",
+        "Building scalable backend services and optimizing application performance",
+        "Collaborating with cross-functional teams to deliver full stack solutions for internal business needs"
       ]
     },
     {
-      title: "Technical Intern",
+      title: "Technical Intern (Odoo Developer)",
       company: "Kapil Technologies",
       period: "May 2025 – Jun 2025",
       location: "Hyderabad, Telangana, India",
       type: "Internship",
       icon: "🔬",
       achievements: [
-        "Gained hands-on experience in Odoo software development with technology stack including PostgreSQL, XML, Python and JavaScript",
-        "Worked extensively on CRM and Project modules, understanding their architecture and customization capabilities",
-        "Developed custom dashboards and reports to visualize key business metrics and performance indicators",
-        "Learned Odoo framework architecture and best practices for module development and customization",
-        "Participated in code reviews and collaborated with senior developers to improve development skills"
+        "Gained hands-on experience in Odoo software development with PostgreSQL, XML, Python, and JavaScript",
+        "Worked extensively on CRM and Project modules, adding custom business logic and workflow automation",
+        "Developed custom dashboards and reports to visualize business metrics",
+        "Learned Odoo framework architecture and best practices for module development",
+        "Collaborated with senior developers and participated in code reviews to improve skills"
       ]
     },
     {
@@ -105,6 +105,7 @@ const About = () => {
       ]
     }
   ];
+
 
   const leadershipExperience = [
     {
@@ -167,21 +168,24 @@ const About = () => {
             </motion.h2>
             <motion.div className="max-w-4xl mx-auto space-y-6 text-slate-300 text-lg leading-relaxed" variants={container}>
               <motion.p variants={item}>
-                I'm a passionate <span className="text-purple-300 font-medium">Full Stack Developer</span> with expertise in
-                <span className="text-cyan-300 font-medium"> Java, Spring Boot, React, and Odoo</span> frameworks. While I'm currently
-                specializing in <span className="text-green-300 font-medium">Odoo development</span> at <span className="text-pink-300 font-medium">Kapil Technologies</span>,
-                my strong foundation in <span className="text-blue-300 font-medium">Java Full-Stack development</span> with Spring Boot and React
-                provides me with a comprehensive understanding of modern application architecture.
+                I'm a passionate <span className="text-purple-300 font-medium">Full Stack Web Developer</span> with expertise in
+                <span className="text-cyan-300 font-medium"> Java, Spring Boot, React, and MySQL</span>. Currently at
+                <span className="text-pink-300 font-medium"> Kapil Technologies</span>, I work on our company portal,
+                delivering responsive UIs, integrating APIs, and building scalable backend services.
+                My strong foundation in <span className="text-blue-300 font-medium">Java Full-Stack development </span>
+                allows me to design and implement modern, enterprise-grade applications.
               </motion.p>
+
               <motion.p variants={item}>
-                My technical expertise spans multiple domains - from <span className="text-purple-300">enterprise ERP solutions with Odoo</span>
-                using PostgreSQL, XML, and JavaScript, to <span className="text-cyan-300">building robust backend services with Java and Spring Boot</span>,
-                and <span className="text-green-300">creating dynamic user interfaces with React</span>. This diverse skill set allows me to approach
-                problems from multiple perspectives and deliver comprehensive solutions.
+                During my <span className="text-purple-300">internship</span> at <span className="text-pink-300">Kapil Technologies</span>,
+                I specialized in <span className="text-green-300 font-medium">Odoo development</span>, working with
+                PostgreSQL, XML, Python, and JavaScript to create and customize enterprise ERP solutions.
+                This experience gave me a diverse skill set and the ability to approach problems from multiple perspectives.
               </motion.p>
+
               <motion.p variants={item}>
-                When I'm not coding, I enjoy <span className="text-pink-300">playing cricket</span> and exploring new technologies. I'm always
-                looking for opportunities to learn and grow as a developer.
+                When I'm not coding, I enjoy <span className="text-pink-300">playing cricket</span> and exploring new technologies.
+                I'm always eager to learn, adapt, and grow as a developer.
               </motion.p>
             </motion.div>
             {/* Contact Information */}

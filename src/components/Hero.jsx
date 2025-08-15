@@ -115,7 +115,7 @@ const Hero = () => {
                 sequence={[
                   'Full Stack Developer',
                   2000,
-                  'Odoo Developer',
+                  'Web Developer',
                   2000,
                   'Java/Spring Boot Expert',
                   2000,

@@ -105,11 +105,11 @@ const Home = () => {
                   sequence={[
                     'Full Stack Developer',
                     2000,
-                    'Java Full Stack Developer',
+                    'Web Developer',
                     2000,
-                    'Odoo Specialist',
+                    'Java/Spring Boot Expert',
                     2000,
-                    'Spring Boot Expert',
+                    'React Specialist',
                     2000,
                   ]}
                   wrapper="span"
@@ -124,8 +124,8 @@ const Home = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
               >
-                I'm a Java Full Stack Developer specializing in enterprise applications. Currently at Kapil Technologies, 
-                I work with the Odoo framework using XML, PostgreSQL, JavaScript, and Python, while maintaining my expertise in Java, Spring Boot, and React.
+                I’m a Java Full Stack Developer specializing in enterprise applications. Currently at Kapil Technologies, 
+                I work as a Web Developer, building scalable solutions while maintaining expertise in Java, Spring Boot, and React.
               </motion.p>
               <motion.div 
                 className="flex flex-wrap justify-center lg:justify-start gap-4 mb-12"
@@ -260,9 +260,11 @@ const Home = () => {
             About Me
           </h2>
           <p className="text-lg text-gray-300 mb-8">
-            I'm a Java Full Stack Developer with expertise in Spring Boot and React. 
-            Currently at Kapil Technologies, I work on Odoo software development using XML, 
-            PostgreSQL, JavaScript, and Python for modules customization.
+            I’m a Java Full Stack Developer with expertise in Spring Boot and React, passionate 
+            about building scalable and user-friendly applications. Currently at Kapil Technologies,
+             I focus on web development using React.js, JavaScript, Node.js, and MongoDB, creating 
+             responsive interfaces and robust backend solutions. My goal is to deliver high-quality
+              software that meets both business needs and user expectations.
           </p>
           <Link 
             to="/about" 

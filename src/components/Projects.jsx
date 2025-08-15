@@ -4,90 +4,103 @@ const Projects = () => {
   const [activeTab, setActiveTab] = useState('professional');
 
   const projects = [
-    // Professional Projects
-    {
-      title: "Odoo CRM Customization",
-      description: "Customized CRM and Project modules in Odoo with enhanced dashboards, workflow automation, and business-specific features for enterprise clients.",
-      technologies: ["Odoo", "PostgreSQL", "JavaScript", "XML", "Python"],
-      image: "https://placehold.co/400x300/7C3AED/ffffff?text=Odoo+CRM",
-      category: "professional",
-      type: "Full Stack",
-      link: "#"
-    },
-    {
-      title: "Odoo Project Module Enhancement",
-      description: "Developed advanced reporting features and customized dashboards for Project module in Odoo, improving project tracking and team collaboration.",
-      technologies: ["Odoo", "PostgreSQL", "JavaScript", "XML", "Python"],
-      image: "https://placehold.co/400x300/059669/ffffff?text=Project+Module",
-      category: "professional",
-      type: "Full Stack",
-      link: "#"
-    },
+  // Professional Projects (current job)
+  {
+    title: "PTKCS Company Portal",
+    description: "Developing and maintaining the official PTKCS company portal, focusing on responsive UI, performance optimization, and scalable architecture.",
+    technologies: ["React.js", "JavaScript", "Tailwind CSS", "Node.js", "MongoDB"],
+    image: "https://placehold.co/400x300/4F46E5/ffffff?text=PTKCS+Portal",
+    category: "professional",
+    type: "Full Stack",
+    link: "https://www.ptkcs.com/"
+  },
+  {
+    title: "KCS Tech Company Portal",
+    description: "Enhancing and building features for the KCS Tech corporate portal, including secure authentication, dynamic content modules, and API integrations.",
+    technologies: ["React.js", "JavaScript", "Tailwind CSS", "Node.js", "MongoDB"],
+    image: "https://placehold.co/400x300/06B6D4/ffffff?text=KCS+Tech+Portal",
+    category: "professional",
+    type: "Full Stack",
+    link: "https://kcs-tech.com/"
+  },
 
-    // Personal Projects
-    {
-      title: "Travel Website",
-      description: "Designed and developed a dynamic, full-stack travel booking platform enabling users to search destinations, select travel dates, and complete bookings via interactive UI.",
-      technologies: ["React.js", "CSS", "Java", "Spring Boot", "MySQL"],
-      image: "https://placehold.co/400x300/6366F1/ffffff?text=Travel+Website",
-      category: "personal",
-      type: "Full Stack",
-      link: "https://travelwebsitefrontend.onrender.com/"
-    },
-    {
-      title: "Covid Dashboard",
-      description: "Implemented a responsive Covid Dashboard where users can see confirmed, active, recovered and deceased cases in India state wise with different types of graphs.",
-      technologies: ["React.js", "Recharts", "JavaScript", "HTML", "CSS"],
-      image: "https://placehold.co/400x300/8B5CF6/ffffff?text=Covid+Dashboard",
-      category: "personal",
-      type: "Frontend",
-      link: "https://covid19tracker.ccbp.tech/"
-    },
-    // {
-    //   title: "Food Munch",
-    //   description: "Developed a responsive website for Food Store where users can see a list of food items, detailed information about a food item, and offers.",
-    //   technologies: ["HTML", "CSS", "Bootstrap", "JavaScript"],
-    //   image: "https://placehold.co/400x300/10B981/ffffff?text=Food+Munch",
-    //   category: "personal",
-    //   type: "Frontend",
-    //   link: "https://foodmunchresta1.ccbp.tech/"
-    // },
-    {
-      title: "Todos Application",
-      description: "A comprehensive todo management tool designed to enhance productivity with user-friendly interface and local storage for task persistence.",
-      technologies: ["HTML", "CSS", "JavaScript", "Bootstrap"],
-      image: "https://placehold.co/400x300/EF4444/ffffff?text=Todo+App",
-      category: "personal",
-      type: "Frontend",
-      link: "https://todoappp.ccbp.tech/"
-    },
+  // Internship Projects
+  {
+    title: "Odoo CRM Customization",
+    description: "Customized CRM and Project modules in Odoo with enhanced dashboards, workflow automation, and business-specific features for enterprise clients.",
+    technologies: ["Odoo", "PostgreSQL", "JavaScript", "XML", "Python"],
+    image: "https://placehold.co/400x300/7C3AED/ffffff?text=Odoo+CRM",
+    category: "internship",
+    type: "Full Stack",
+    link: "#"
+  },
+  {
+    title: "Odoo Project Module Enhancement",
+    description: "Developed advanced reporting features and customized dashboards for Project module in Odoo, improving project tracking and team collaboration.",
+    technologies: ["Odoo", "PostgreSQL", "JavaScript", "XML", "Python"],
+    image: "https://placehold.co/400x300/059669/ffffff?text=Project+Module",
+    category: "internship",
+    type: "Full Stack",
+    link: "#"
+  },
 
-    // Academic Projects
-    {
-      title: "Facial Emotion Recognition",
-      description: "Developed a real-time emotion recognition system using CNNs for facial expression detection. Improved model accuracy by incorporating image normalization and edge detection.",
-      technologies: ["Python", "AI", "Deep Learning", "CNN"],
-      image: "https://placehold.co/400x300/F59E0B/ffffff?text=Emotion+AI",
-      category: "academic",
-      type: "AI/ML",
-      link: "#"
-    },
-    {
-      title: "Cricket Team Application",
-      description: "Developed RESTful APIs using Spring Boot for managing CRUD operations of players and matches. Implemented features to add, update, and delete players, as well as track match data.",
-      technologies: ["Java", "Spring Boot", "JPA", "Hibernate", "SQL"],
-      image: "https://placehold.co/400x300/06B6D4/ffffff?text=Cricket+App",
-      category: "personal",
-      type: "Backend",
-      link: "#"
-    }
-  ];
+  // Personal Projects
+  {
+    title: "Travel Website",
+    description: "Dynamic, full-stack travel booking platform enabling users to search destinations, select travel dates, and complete bookings via interactive UI.",
+    technologies: ["React.js", "CSS", "Java", "Spring Boot", "MySQL"],
+    image: "https://placehold.co/400x300/6366F1/ffffff?text=Travel+Website",
+    category: "personal",
+    type: "Full Stack",
+    link: "https://travelwebsitefrontend.onrender.com/"
+  },
+  {
+    title: "Covid Dashboard",
+    description: "Responsive Covid Dashboard with confirmed, active, recovered and deceased cases in India state-wise with multiple graph views.",
+    technologies: ["React.js", "Recharts", "JavaScript", "HTML", "CSS"],
+    image: "https://placehold.co/400x300/8B5CF6/ffffff?text=Covid+Dashboard",
+    category: "personal",
+    type: "Frontend",
+    link: "https://covid19tracker.ccbp.tech/"
+  },
+  {
+    title: "Todos Application",
+    description: "A productivity-focused todo app with a user-friendly interface and local storage support for persistent tasks.",
+    technologies: ["HTML", "CSS", "JavaScript", "Bootstrap"],
+    image: "https://placehold.co/400x300/EF4444/ffffff?text=Todo+App",
+    category: "personal",
+    type: "Frontend",
+    link: "https://todoappp.ccbp.tech/"
+  },
 
-  const tabs = [
-    { id: "professional", name: "💼 Professional Projects", count: projects.filter(p => p.category === "professional").length },
-    { id: "personal", name: "💡 Personal Projects", count: projects.filter(p => p.category === "personal").length },
-    { id: "academic", name: "🎓 Academic Projects", count: projects.filter(p => p.category === "academic").length }
-  ];
+  // Academic Projects
+  {
+    title: "Facial Emotion Recognition",
+    description: "Real-time emotion recognition using CNNs for facial expression detection, enhanced with image normalization and edge detection.",
+    technologies: ["Python", "AI", "Deep Learning", "CNN"],
+    image: "https://placehold.co/400x300/F59E0B/ffffff?text=Emotion+AI",
+    category: "academic",
+    type: "AI/ML",
+    link: "#"
+  },
+  {
+    title: "Cricket Team Application",
+    description: "Spring Boot REST APIs for managing players and matches with CRUD operations, integrated with SQL for data persistence.",
+    technologies: ["Java", "Spring Boot", "JPA", "Hibernate", "SQL"],
+    image: "https://placehold.co/400x300/06B6D4/ffffff?text=Cricket+App",
+    category: "academic",
+    type: "Backend",
+    link: "#"
+  }
+];
+
+const tabs = [
+  { id: "professional", name: "🏢 Professional Projects", count: projects.filter(p => p.category === "professional").length },
+  { id: "internship", name: "📝 Internship Projects", count: projects.filter(p => p.category === "internship").length },
+  { id: "personal", name: "💡 Personal Projects", count: projects.filter(p => p.category === "personal").length },
+  { id: "academic", name: "🎓 Academic Projects", count: projects.filter(p => p.category === "academic").length }
+];
+
 
   const filteredProjects = projects.filter(project => project.category === activeTab);
 
