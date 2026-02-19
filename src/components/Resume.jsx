@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 const Resume = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [showFallback, setShowFallback] = useState(false);
-  const resumeUrl = '/Chandrashekar Resume.pdf';
+  const resumeUrl = '/Chandrashekar_Hanumanthu_Resume.pdf';
   
   useEffect(() => {
     // Check if the PDF loads successfully
