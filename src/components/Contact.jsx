@@ -43,8 +43,8 @@ const Contact = () => {
               <div>
                 <h4 className="text-xs font-bold uppercase tracking-widest text-purple-500 mb-2">Social</h4>
                 <div className="flex gap-6">
-                  <a href="#" className="text-xl text-zinc-400 hover:text-white transition-colors">LinkedIn</a>
-                  <a href="#" className="text-xl text-zinc-400 hover:text-white transition-colors">GitHub</a>
+                  <a href="https://linkedin.com/in/chandrashekar-hanumanthu-1329232b3" target="_blank" rel="noreferrer" className="text-xl text-zinc-400 hover:text-white transition-colors">LinkedIn</a>
+                  <a href="https://github.com/ChandrashekarHanumanthu" target="_blank" rel="noreferrer" className="text-xl text-zinc-400 hover:text-white transition-colors">GitHub</a>
                 </div>
               </div>
             </div>
