@@ -2,30 +2,62 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    --bg-color: #09090b;
+    --text-color: #f8fafc;
+  }
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
-  min-height: 100vh; /* Ensure full height */
+  html {
+    scroll-behavior: auto;
+  }
+
+  body {
+    @apply bg-zinc-950 text-slate-200 antialiased selection:bg-purple-500/30 selection:text-white;
+    font-family: 'Satoshi', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight text-white;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .film-grain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.05;
+    background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+    filter: contrast(150%) brightness(100%);
+  }
 }
 
-/* Custom animations */
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
+/* Lenis CSS */
+html.lenis {
+  height: auto;
 }
 
-.animate-pulse-slow {
-  animation: pulse 3s ease-in-out infinite;
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
 }

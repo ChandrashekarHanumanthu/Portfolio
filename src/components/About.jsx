@@ -1,340 +1,119 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
+const SectionHeader = ({ number, title }) => (
+  <div className="flex items-center gap-4 mb-12">
+    <span className="text-purple-500 font-mono text-sm">{number}</span>
+    <h3 className="text-3xl font-display font-bold text-white uppercase tracking-wider">{title}</h3>
+    <div className="flex-1 h-[1px] bg-zinc-800" />
+  </div>
+);
+
+const ExperienceItem = ({ title, company, period, achievements }) => (
+  <motion.div 
+    initial={{ opacity: 0, x: -20 }}
+    whileInView={{ opacity: 1, x: 0 }}
+    viewport={{ once: true }}
+    className="mb-16 last:mb-0"
+  >
+    <div className="flex flex-col md:flex-row md:items-baseline justify-between mb-4">
+      <h4 className="text-2xl font-display font-bold text-white">{title}</h4>
+      <span className="text-zinc-500 font-mono text-sm">{period}</span>
+    </div>
+    <p className="text-purple-400 font-medium mb-6">{company}</p>
+    <ul className="space-y-4">
+      {achievements.map((item, i) => (
+        <li key={i} className="text-zinc-400 leading-relaxed pl-6 relative">
+          <span className="absolute left-0 top-3 w-1.5 h-1.5 bg-purple-500/50 rounded-full" />
+          {item}
+        </li>
+      ))}
+    </ul>
+  </motion.div>
+);
+
 const About = () => {
-  // Animation variants
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.3,
-      },
-    },
-  };
-  const item = {
-    hidden: { opacity: 0, y: 20 },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-        ease: [0.4, 0, 0.2, 1]
-      }
-    },
-  };
-  const fadeIn = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        duration: 0.8,
-        ease: [0.4, 0, 0.2, 1]
-      }
-    },
-  };
-
-  const education = [
-    {
-      degree: "Industry Ready Certification in Java Full-Stack Development",
-      institution: "Nxtwave Disruptive Technologies",
-      period: "Jun 2023 – May 2025",
-      details: "Comprehensive full-stack development program focusing on Java, Spring Boot, React, and modern web technologies.",
-      icon: "🎓"
-    },
-    {
-      degree: "B.Tech, Computer Science and Engineering",
-      institution: "Vikas College Of Engineering and Technology",
-      period: "2019 – 2023",
-      details: "Bachelor of Technology with focus on software development, algorithms, and computer systems.",
-      icon: "💻"
-    },
-    {
-      degree: "Intermediate, MPC",
-      institution: "Viswa Sri Haygreeva Jr College",
-      period: "2017 – 2019",
-      details: "Mathematics, Physics, and Chemistry stream with strong foundation in scientific principles.",
-      icon: "📚"
-    }
-  ];
-
-  const workExperience = [
+  const experiences = [
     {
       title: "Web Developer",
       company: "Kapil Technologies",
       period: "Jul 2025 – Present",
-      location: "Hyderabad, Telangana, India",
-      type: "Full-time",
-      icon: "💼",
       achievements: [
-        "Developing and maintaining the company portal using React.js, Java, Spring Boot, and MySQL",
-        "Implementing responsive and user-friendly interfaces with modern UI/UX practices",
-        "Integrating RESTful APIs for seamless data exchange between frontend and backend",
-        "Building scalable backend services and optimizing application performance",
-        "Collaborating with cross-functional teams to deliver full stack solutions for internal business needs"
+        "Architecting enterprise portals using React.js and Spring Boot.",
+        "Developing performant RESTful microservices for high-traffic environments.",
+        "Crafting cinematic user experiences with modern CSS and animation libraries."
       ]
     },
     {
-      title: "Technical Intern (Odoo Developer)",
+      title: "Technical Intern (Odoo)",
       company: "Kapil Technologies",
       period: "May 2025 – Jun 2025",
-      location: "Hyderabad, Telangana, India",
-      type: "Internship",
-      icon: "🔬",
       achievements: [
-        "Gained hands-on experience in Odoo software development with PostgreSQL, XML, Python, and JavaScript",
-        "Worked extensively on CRM and Project modules, adding custom business logic and workflow automation",
-        "Developed custom dashboards and reports to visualize business metrics",
-        "Learned Odoo framework architecture and best practices for module development",
-        "Collaborated with senior developers and participated in code reviews to improve skills"
+        "Developed custom business logic for Odoo ERP modules using Python and XML.",
+        "Engineered PostgreSQL data migrations and schema optimizations.",
+        "Built custom visualization dashboards for enterprise resource tracking."
       ]
-    },
-    {
-      title: "Python Developer Intern",
-      company: "Try Logic Soft Solutions AP Private Limited",
-      period: "Jun 2022 – Aug 2022",
-      location: "Vijayawada, Andhra Pradesh, India",
-      type: "Internship",
-      icon: "🐍",
-      achievements: [
-        "Gained hands-on experience in core Python programming concepts including data types, control structures, functions, and object-oriented programming",
-        "Developed mini projects such as a calculator application and student grade management system",
-        "Strengthened coding skills and learned to develop clean, efficient, and well-structured code",
-        "Acquired knowledge in basic file handling, exception management, and participated in code reviews to improve debugging and logical thinking abilities"
-      ]
-    }
-  ];
-
-
-  const leadershipExperience = [
-    {
-      title: "Team Leader",
-      project: "Facial Emotion Recognition using AI – Deep Learning",
-      period: "Sep 2022 – Mar 2023",
-      location: "Vijayawada, Andhra Pradesh",
-      icon: "🤖",
-      achievements: [
-        "Led a team of 4 members, coordinating tasks and ensuring timely completion of project milestones.",
-        "Directed the development and implementation of real-time emotion detection using Convolutional Neural Networks (CNNs) to process facial expressions.",
-        "Designed and tested image normalization and edge detection algorithms to improve recognition accuracy.",
-        "Managed documentation and provided technical guidance, overseeing integration with live camera feeds for real-time emotion recognition."
-      ]
-    }
-  ];
-
-  const contactInfo = [
-    {
-      label: "Email",
-      value: "hanumanthuchandrashekar972@gmail.com",
-      icon: "✉️",
-      link: "mailto:hanumanthuchandrashekar972@gmail.com"
-    },
-    {
-      label: "Phone",
-      value: "+91 8500394181",
-      icon: "📱",
-      link: "tel:+918500394181"
-    },
-    {
-      label: "Location",
-      value: "Hyderabad, Telangana",
-      icon: "📍"
-    },
-    {
-      label: "Languages",
-      value: "English, Telugu",
-      icon: "🌐"
     }
   ];
 
   return (
-    <section id="about" className="py-16 md:py-24 w-full bg-gradient-to-b from-slate-900 to-slate-950">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <motion.div
-          className="flex flex-col gap-16"
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: "-100px" }}
-        >
-          {/* About Me Section */}
-          <motion.div variants={fadeIn}>
-            <motion.h2
-              className="text-4xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent text-center"
-              variants={item}
-            >
-              About Me
-            </motion.h2>
-            <motion.div className="max-w-4xl mx-auto space-y-6 text-slate-300 text-lg leading-relaxed" variants={container}>
-              <motion.p variants={item}>
-                I'm a passionate <span className="text-purple-300 font-medium">Full Stack Web Developer</span> with expertise in
-                <span className="text-cyan-300 font-medium"> Java, Spring Boot, React, and MySQL</span>. Currently at
-                <span className="text-pink-300 font-medium"> Kapil Technologies</span>, I work on our company portal,
-                delivering responsive UIs, integrating APIs, and building scalable backend services.
-                My strong foundation in <span className="text-blue-300 font-medium">Java Full-Stack development </span>
-                allows me to design and implement modern, enterprise-grade applications.
-              </motion.p>
+    <section id="about" className="py-32 bg-zinc-950">
+      <div className="container mx-auto px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+          {/* Sticky Intro */}
+          <div className="lg:col-span-5 lg:sticky lg:top-32 h-fit">
+            <h2 className="text-6xl md:text-8xl font-display font-bold text-white mb-8 leading-[0.9]">
+              The <br /> <span className="text-zinc-600">Story</span>.
+            </h2>
+            <p className="text-xl text-zinc-400 leading-relaxed mb-8 text-balance">
+              I’m a developer who believes the most powerful software 
+              is built at the intersection of robust architecture and 
+              delightful user experience.
+            </p>
+            <div className="flex flex-col gap-4 text-zinc-500 font-mono text-sm">
+              <p>📍 Hyderabad, India</p>
+              <p>☕ Powered by Code & Coffee</p>
+              <p>🏏 Cricket Enthusiast</p>
+            </div>
+          </div>
 
-              <motion.p variants={item}>
-                During my <span className="text-purple-300">internship</span> at <span className="text-pink-300">Kapil Technologies</span>,
-                I specialized in <span className="text-green-300 font-medium">Odoo development</span>, working with
-                PostgreSQL, XML, Python, and JavaScript to create and customize enterprise ERP solutions.
-                This experience gave me a diverse skill set and the ability to approach problems from multiple perspectives.
-              </motion.p>
+          {/* Content Scroll */}
+          <div className="lg:col-span-7">
+            <div className="mb-32">
+              <SectionHeader number="01" title="Philosophy" />
+              <p className="text-xl text-zinc-300 leading-relaxed mb-8">
+                My approach to development is centered on clean code and 
+                scalability. I don't just build features; I build 
+                ecosystems that grow with the user.
+              </p>
+            </div>
 
-              <motion.p variants={item}>
-                When I'm not coding, I enjoy <span className="text-pink-300">playing cricket</span> and exploring new technologies.
-                I'm always eager to learn, adapt, and grow as a developer.
-              </motion.p>
-            </motion.div>
-            {/* Contact Information */}
-            <motion.div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-12 max-w-4xl mx-auto" variants={container}>
-              {contactInfo.map((info, index) => (
-                <motion.div
-                  key={index}
-                  className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-slate-800 hover:border-purple-500/30 transition-all group"
-                  variants={item}
-                  whileHover={{ y: -5, boxShadow: '0 10px 25px -5px rgba(168, 85, 247, 0.1)' }}
-                >
-                  <div className="flex items-start gap-3">
-                    <span className="text-2xl mt-0.5 group-hover:scale-110 transition-transform flex-shrink-0">
-                      {info.icon}
-                    </span>
-                    <div className="min-w-0">
-                      <h4 className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">
-                        {info.label}
-                      </h4>
-                      {info.link ? (
-                        <a
-                          href={info.link}
-                          className="text-white hover:text-purple-300 transition-colors break-words break-all"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          {info.value}
-                        </a>
-                      ) : (
-                        <p className="text-white break-words">{info.value}</p>
-                      )}
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
-          </motion.div>
-          
-          {/* Work Experience Section */}
-          <motion.div variants={fadeIn}>
-            <motion.h3 className="text-3xl md:text-4xl font-bold text-white mb-8 flex items-center gap-2 justify-center" variants={item}>
-              <span className="text-green-400">💼</span> Work Experience
-            </motion.h3>
-            <div className="space-y-6 max-w-4xl mx-auto">
-              {workExperience.map((exp, index) => (
-                <motion.div
-                  key={index}
-                  className="bg-gradient-to-br from-slate-900/80 to-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700/50 hover:border-green-500/30 transition-all group"
-                  variants={item}
-                  whileHover={{ y: -5, boxShadow: '0 10px 25px -5px rgba(34, 197, 94, 0.1)' }}
-                >
-                  <div className="flex items-start gap-4">
-                    <div className="text-3xl mt-1 group-hover:scale-110 transition-transform">
-                      {exp.icon}
-                    </div>
-                    <div className="flex-1">
-                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-                        <h4 className="text-lg font-semibold text-green-300">{exp.title}</h4>
-                        <span className="text-xs bg-green-900/50 text-green-300 px-3 py-1 rounded-full">{exp.period}</span>
-                      </div>
-                      <p className="text-slate-300 font-medium mt-1">{exp.company}</p>
-                      <p className="text-slate-400 text-sm mt-1">{exp.location} · {exp.type}</p>
-                      <ul className="mt-3 space-y-2 pl-1">
-                        {exp.achievements.map((achievement, aIndex) => (
-                          <li key={aIndex} className="text-slate-300 text-sm flex items-start group/achievement">
-                            <span className="text-green-400 mr-2 group-hover/achievement:text-green-400 transition-colors">•</span>
-                            <span className="group-hover/achievement:text-white transition-colors">{achievement}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </motion.div>
+            <div className="mb-32">
+              <SectionHeader number="02" title="Experience" />
+              {experiences.map((exp, i) => (
+                <ExperienceItem key={i} {...exp} />
               ))}
             </div>
-          </motion.div>
 
-          {/* Education Section */}
-          <motion.div variants={fadeIn}>
-            <motion.h3 className="text-3xl md:text-4xl font-bold text-white mb-8 flex items-center gap-2 justify-center" variants={item}>
-              <span className="text-purple-400">🎓</span> Education
-            </motion.h3>
-            <div className="space-y-6 max-w-4xl mx-auto relative">
-              {education.map((edu, index) => (
-                <motion.div
-                  key={index}
-                  className="bg-gradient-to-br from-slate-900/80 to-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700/50 hover:border-purple-500/30 transition-all group relative overflow-hidden"
-                  variants={item}
-                  whileHover={{ y: -5, boxShadow: '0 10px 25px -5px rgba(168, 85, 247, 0.1)' }}
-                >
-                  <div className="absolute left-6 top-8 h-3 w-3 rounded-full bg-purple-500 border-2 border-purple-300 z-10"></div>
-                  {index !== education.length - 1 && (
-                    <div className="absolute left-7 top-8 h-full w-0.5 bg-purple-400/30 -z-10"></div>
-                  )}
-                  <div className="flex items-start gap-4 pl-6">
-                    <div className="text-3xl mt-1 group-hover:scale-110 transition-transform flex-shrink-0">
-                      {edu.icon}
-                    </div>
-                    <div>
-                      <h4 className="text-lg font-semibold text-purple-300">{edu.degree}</h4>
-                      <p className="text-slate-300">{edu.institution}</p>
-                      <p className="text-purple-400/80 text-sm mt-1">{edu.period}</p>
-                      <p className="text-slate-400 text-sm mt-2 leading-relaxed">{edu.details}</p>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
+            <div>
+              <SectionHeader number="03" title="Education" />
+              <div className="space-y-12">
+                <div>
+                  <h4 className="text-xl font-display font-bold text-white mb-2">
+                    Industry Ready Certification in Java Full-Stack
+                  </h4>
+                  <p className="text-zinc-500">Nxtwave Disruptive Technologies · 2023 – 2025</p>
+                </div>
+                <div>
+                  <h4 className="text-xl font-display font-bold text-white mb-2">
+                    B.Tech, Computer Science and Engineering
+                  </h4>
+                  <p className="text-zinc-500">Vikas College Of Engineering · 2019 – 2023</p>
+                </div>
+              </div>
             </div>
-          </motion.div>
-          
-          {/* Leadership Experience Section */}
-          <motion.div variants={fadeIn}>
-            <motion.h3 className="text-3xl md:text-4xl font-bold text-white mb-8 flex items-center gap-2 justify-center" variants={item}>
-              <span className="text-pink-400">🚀</span> Leadership Experience
-            </motion.h3>
-            <div className="space-y-6 max-w-4xl mx-auto">
-              {leadershipExperience.map((exp, index) => (
-                <motion.div
-                  key={index}
-                  className="bg-gradient-to-br from-slate-900/80 to-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700/50 hover:border-pink-500/30 transition-all group"
-                  variants={item}
-                  whileHover={{ y: -5, boxShadow: '0 10px 25px -5px rgba(236, 72, 153, 0.1)' }}
-                >
-                  <div className="flex items-start gap-4">
-                    <div className="text-3xl mt-1 group-hover:scale-110 transition-transform">
-                      {exp.icon}
-                    </div>
-                    <div className="flex-1">
-                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-                        <h4 className="text-lg font-semibold text-pink-300">{exp.title}</h4>
-                        <span className="text-xs bg-pink-900/50 text-pink-300 px-3 py-1 rounded-full">{exp.period}</span>
-                      </div>
-                      <p className="text-slate-300 font-medium mt-1">{exp.project}</p>
-                      <p className="text-slate-400 text-sm mt-1">{exp.location}</p>
-                      <ul className="mt-3 space-y-2 pl-1">
-                        {exp.achievements.map((achievement, aIndex) => (
-                          <li key={aIndex} className="text-slate-300 text-sm flex items-start group/achievement">
-                            <span className="text-purple-400 mr-2 group-hover/achievement:text-pink-400 transition-colors">•</span>
-                            <span className="group-hover/achievement:text-white transition-colors">{achievement}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </div>
     </section>
   );

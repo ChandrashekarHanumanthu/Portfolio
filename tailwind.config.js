@@ -7,9 +7,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        slate: {
-          900: '#0f172a',
-          800: '#1e293b',
+        zinc: {
+          950: '#09090b',
         },
         primary: {
           400: '#a78bfa',
@@ -22,10 +21,14 @@ module.exports = {
           600: '#db2777',
         },
       },
+      fontFamily: {
+        sans: ['Satoshi', 'Inter', 'sans-serif'],
+        display: ['Cabinet Grotesk', 'sans-serif'],
+        mono: ['Fira Code', 'monospace'],
+      },
       animation: {
         'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         'float': 'float 6s ease-in-out infinite',
-        'float-slow': 'float 8s ease-in-out infinite',
         'bounce-slow': 'bounce 3s infinite',
       },
       keyframes: {
@@ -34,29 +37,16 @@ module.exports = {
           '50%': { transform: 'translateY(-20px)' },
         },
       },
-      animationDelay: {
-        '1000': '1000ms',
-        '2000': '2000ms',
-      },
-      fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        mono: ['Fira Code', 'monospace'],
+      transitionTimingFunction: {
+        'cinematic': 'cubic-bezier(0.16, 1, 0.3, 1)',
       },
       boxShadow: {
         'glow': '0 0 15px rgba(168, 85, 247, 0.5)',
         'glow-lg': '0 0 25px rgba(168, 85, 247, 0.7)',
       },
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      },
     },
   },
   plugins: [
     require('tailwindcss-animate'),
-    function({ addVariant }) {
-      addVariant('child', '& > *');
-      addVariant('child-hover', '& > *:hover');
-    },
   ],
 }
