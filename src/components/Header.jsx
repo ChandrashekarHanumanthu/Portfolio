@@ -34,7 +34,7 @@ const Header = () => {
           to="/" 
           className="text-2xl font-display font-bold text-white tracking-tighter"
         >
-          C<span className="text-purple-500">.</span>HANUMANTHU
+          H<span className="text-purple-500">.</span>CHANDRASHEKAR
         </Link>
 
         {/* Desktop Nav */}

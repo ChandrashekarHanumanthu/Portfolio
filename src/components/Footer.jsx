@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-start gap-16 mb-20">
           <div className="max-w-md">
             <h2 className="text-3xl font-display font-bold text-white mb-6 tracking-tighter">
-              C<span className="text-purple-500">.</span>HANUMANTHU
+              H<span className="text-purple-500">.</span>CHANDRASHEKAR
             </h2>
             <p className="text-zinc-500 leading-relaxed">
               Crafting high-end digital experiences for enterprise 
